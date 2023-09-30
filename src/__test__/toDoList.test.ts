@@ -15,3 +15,12 @@ describe("Enlazar elemento html a la variable newTask", () => {
     expect(toDoList.getTasks()).toEqual([newTask]);
   });
 });
+
+describe("Mostrar tareas en una lista", () => {
+  it("Las tareas guardadas deben irse mostrando en un lista en pantalla", () => {
+    const toDoList = new ToDoList();
+    let newTask: string = "Nueva Tarea";
+    toDoList.addTask(newTask);
+    expect(toDoList.getTasks()).toContain(newTask);
+    });
+});

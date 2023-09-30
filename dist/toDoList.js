@@ -9,13 +9,16 @@ class ToDoList {
     }
     addTask(newTask) {
         this.tasks.push(newTask);
+        this.updateTaskList();
+    }
+    updateTaskList() {
+        const taskListElement = document.getElementById("lista-tareas");
+        if (taskListElement) {
+            const listItem = document.createElement("li");
+            listItem.textContent = this.tasks[this.tasks.length - 1];
+            taskListElement.appendChild(listItem);
+        }
     }
 }
 exports.default = ToDoList;
-
-import ToDoList from 'src/toDoList.ts'
-
-document.addEventListener("DOMContentLoaded", () => {
-  
-});
 //# sourceMappingURL=toDoList.js.map
