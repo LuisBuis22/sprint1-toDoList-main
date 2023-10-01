@@ -24,3 +24,18 @@ describe("Mostrar tareas en una lista", () => {
     expect(toDoList.getTasks()).toContain(newTask);
     });
 });
+
+describe('Imprimir tareas en pantalla', () => {
+  it("Enlazar el evento onclick con la función showTasks", () => {
+    const clickEvent = document.createElement("button");
+    clickEvent.id = "agregar-tarea";
+    document.body.appendChild(clickEvent);
+    const toDoList = new ToDoList();
+
+    document.body.removeChild(clickEvent);
+
+    toDoList.linkClickEvent();
+
+    expect(() => toDoList.showTasks()).not.toThrowError();
+  });
+});
