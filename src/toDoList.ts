@@ -75,6 +75,3 @@ const toDoList = new ToDoList();
 toDoList.linkClickEvent();
 }
 
-
-
-
